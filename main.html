@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+</head>
+<body>
+    <h1>Text Analysis</h1>
+    <button onclick="fetchAnalysis()">Fetch Analysis</button>
+    
+    <h2>Results</h2>
+    <div id="results"></div>
+
+    <script>
+        function fetchAnalysis() {
+            fetch('http://127.0.0.1:5000/analyze')
+                .then(response => response.json())
+                .then(data => {
+                    let resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML = '';
+
+                    data.forEach((item, index) => {
+                        resultsDiv.innerHTML += `
+                            <h3>Text ${index + 1}</h3>
+                            <p><strong>Original:</strong> ${item.original}</p>
+                            <p><strong>Entities:</strong> ${item.entities}</p>
+                            <p><strong>Sentiment:</strong> ${JSON.stringify(item.sentiment)}</p>
+                            <p><strong>Summary:</strong> ${item.summary}</p>
+                            <hr>
+                        `;
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
