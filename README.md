@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 
 ## Descargar dataset
-Para poner en marca el proyecto se necesita el dataset en formato de csv, el link lo encuentras <a href="https://www.mediafire.com/file/jgw6hc2db5fo07u/Reviews.csv/file" class="external-link" target="_blank">aqui</a>.
+Para poner en marcha el proyecto se necesita el dataset en formato de csv, el link lo encuentras <a href="https://www.mediafire.com/file/jgw6hc2db5fo07u/Reviews.csv/file" class="external-link" target="_blank">aqui</a> y alojarlo en el carpeta raiz.
 
 ## Correr el programa
 
